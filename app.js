@@ -74,10 +74,35 @@ app.post('/usuarios', (req, res) => {
       lugarProcedencia:req.body.lugar
     };
     usuarios.push(nuevoUsuario);
+   res.json(usuarios)
+    console.log(usuarios)
     res.redirect('/');
   });
 
+/*hacer una peticion put
+  app.put('usuarios/:nombre',(req,res)=>{
+    const nombre=req.params.nombre
+    const actualizarUsuarios=usuarios.findIndex(usuario=>usuario.nombre === nombre)
+    if(!actualizarUsuarios=== -1){
+       res.status(404).send("Usuario no encontrado")
+    }else{
 
+        usuarios[actualizarUsuarios].nombre=req.body.nombre,
+        usuarios[actualizarUsuarios].edad=req.body.edad,
+        usuarios[actualizarUsuarios].lugar=req.body.lugar,
+    }
+    res.json(usuarios[actualizarUsuarios])
+  }
+  res.redirect('/')
+})
+*/
+/*
+app.delete('/usuarios/:nombre',(req,res)=>{
+    const nombre =req.params.nombre
+    usuarios=usuarios.filter(user =>user.nombre !==nombre)
+    res.json(usuarios)
+})
+*/
 app.listen(3000, () => {
     console.log('Express está escuchando en el http://localhost:3000');
 });
