@@ -77,6 +77,7 @@ app.post('/usuarios', (req, res) => {
     res.redirect('/');
   });
 
+
 app.listen(3000, () => {
     console.log('Express está escuchando en el http://localhost:3000');
 });
